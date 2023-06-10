@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'src/core/config/routes/routes.dart';
 import 'package:provider/provider.dart';
-import 'src/feature/data/database/app_database.dart';
-import 'src/feature/domain/usecase/user_usecase.dart';
-import 'src/feature/data/repository/user_repository_impl.dart';
+import 'src/features/data/database/app_database.dart';
+import 'src/features/domain/usecase/user_usecase.dart';
+import 'src/features/data/repository/user_repository_impl.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
