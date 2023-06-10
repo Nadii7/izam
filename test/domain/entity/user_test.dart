@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:izam/app/domain/entity/user.dart';
+import 'package:izam/src/feature/domain/entity/user.dart';
 
 void main() {
   group('User', () {
