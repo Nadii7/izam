@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/config/themes/theme.dart';
+import '../../../../core/utils/constants/app_strings.dart';
 import '../../../../core/utils/extensions/extensions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +26,8 @@ class CustomMailInputField extends StatelessWidget {
       strutStyle: const StrutStyle(forceStrutHeight: true),
       onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
       decoration: textFieldDecoration().copyWith(
-        labelText: 'E-mail',
+        labelText: AppStrings.email,
+        hintText: AppStrings.emailHint,
         suffixIcon: (controller.text.trim().isEmail)
             ? Icon(
                 Icons.check,

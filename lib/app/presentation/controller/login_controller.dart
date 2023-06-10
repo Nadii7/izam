@@ -1,7 +1,7 @@
 import 'package:provider/provider.dart';
-import '../../domain/usecase/user_usecase.dart';
 import '../widgets/Dialogs/custom_dialog.dart';
-import '../widgets/Dialogs/custom_snackbar.dart';
+import '../../domain/usecase/user_usecase.dart';
+import '../../../core/utils/constants/app_strings.dart';
 
 Future<void> tryLogin({
   required context,
@@ -13,13 +13,16 @@ Future<void> tryLogin({
 
   if (result.success) {
     showAlertDialog(
-      context,
-      'Login successful! You have logged in ${result.user!.loginCount} times.',
+      context: context,
+      titleTxt: AppStrings.loginSuccess,
+      contentTxt:
+          ' Email: ${result.user!.email}\n Password: ${result.user!.password}\n Login Count: ${result.user!.loginCount} times.',
     );
   } else {
-    showCustomSnack(
-      context,
-      'Invalid password try again with different password.',
+    showAlertDialog(
+      context: context,
+      titleTxt: AppStrings.loginFails,
+      contentTxt: 'Invalid password try again with different password.',
     );
   }
 }

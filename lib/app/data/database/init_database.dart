@@ -1,5 +1,5 @@
-import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart' as path;
 
 Future<Database> initDatabase() async {
   return await openDatabase(

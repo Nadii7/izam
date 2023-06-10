@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../../Widgets/Button/custom_button.dart';
-import '../../../../controller/forgot_pass_controller.dart';
 import '../../../../widgets/Text/custom_mail_field.dart';
 import '../../../../../../core/config/themes/theme.dart';
+import '../../../../controller/forgot_pass_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/utils/constants/constants.dart';
+import '../../../../../../core/utils/constants/app_strings.dart';
 import '../../../../../../core/utils/extensions/extensions.dart';
 
 class Body extends StatefulWidget {
@@ -24,12 +25,10 @@ class _BodyState extends State<Body> {
         mailController.text.isEmail == false) {
       setState(() {
         _isDisabled = true;
-        _isLoading = true;
       });
     } else {
       setState(() {
         _isDisabled = false;
-        _isLoading = false;
       });
     }
   }
@@ -66,7 +65,7 @@ class _BodyState extends State<Body> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              "oops you forgot your password! don't worry enter your email and we will generate a new one for you ",
+              AppStrings.forgotPassDescription,
               style: customTextStyle(
                 height: 1.2,
                 fontWeight: FontWeight.w400,
@@ -81,8 +80,8 @@ class _BodyState extends State<Body> {
             SizedBox(height: 10.h),
             CustomButton(
               isLoading: _isLoading,
-              text: "Reset Password",
               isDisabled: _isDisabled,
+              text: AppStrings.resetPassword,
               onPress: () => _resetPassword(context),
             ),
           ],

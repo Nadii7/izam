@@ -1,5 +1,6 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:izam/core/config/themes/theme.dart';
 import '../../../../controller/login_controller.dart';
 import '../../../../Widgets/Button/custom_button.dart';
 import '../../../../Widgets/Text/custom_mail_field.dart';
@@ -7,6 +8,7 @@ import '../../../../Widgets/Text/custom_action_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Widgets/Text/custom_password_field.dart';
 import '../../../../../../core/utils/constants/constants.dart';
+import '../../../../../../core/utils/constants/app_strings.dart';
 import '../../../../../../core/utils/extensions/extensions.dart';
 
 class Body extends StatefulWidget {
@@ -60,55 +62,77 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: defaultPadding,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Expanded(
-              flex: 3,
-              child: SvgPicture.asset(
-                "assets/images/logo.svg",
-                fit: BoxFit.fitHeight,
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.topCenter,
+            child: SvgPicture.asset(
+              "assets/images/logo.svg",
+              height: 150.h,
+              fit: BoxFit.fitHeight,
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Container(
+              width: 375,
+              height: 365,
+              decoration: cardDecoration(),
+              padding: EdgeInsets.symmetric(
+                vertical: 30,
+                horizontal: 20,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    AppStrings.welcome,
+                    style: customTextStyle(
+                      fontSize: 24,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                  Spacer(flex: 2),
+                  //! Email Field
+                  CustomMailInputField(
+                    controller: mailController,
+                    onChanged: (value) => checkInputFields(),
+                  ),
+                  Spacer(flex: 1),
+                  //! Password Field
+                  CustomPasswordInputField(
+                    controller: passwordController,
+                    onChanged: (value) => checkInputFields(),
+                  ),
+                  Spacer(flex: 1),
+                  //! Forgot Password
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      CustomActionText(
+                        color: primaryText,
+                        fontWeight: FontWeight.w700,
+                        actionText: AppStrings.forgotPassword,
+                        onTap: () =>
+                            Navigator.pushNamed(context, '/forgot_password'),
+                      ),
+                    ],
+                  ),
+                  Spacer(flex: 1),
+                  //! Sign In Button
+                  CustomButton(
+                    isLoading: _isLoading,
+                    isDisabled: _isDisabled,
+                    onPress: () => _loginUser(context),
+                    text: AppStrings.login.toUpperCase(),
+                  ),
+                ],
               ),
             ),
-            const Spacer(flex: 1),
-            //! Email Field
-            CustomMailInputField(
-              controller: mailController,
-              onChanged: (value) => checkInputFields(),
-            ),
-            SizedBox(height: 16.h),
-            //! Password Field
-            CustomPasswordInputField(
-              controller: passwordController,
-              onChanged: (value) => checkInputFields(),
-            ),
-            SizedBox(height: 10.h),
-            //! Forgot Password
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                CustomActionText(
-                  color: primaryText,
-                  fontWeight: FontWeight.w600,
-                  actionText: 'Forgot Password',
-                  onTap: () => Navigator.pushNamed(context, '/forgot_password'),
-                ),
-              ],
-            ),
-            const Spacer(flex: 1),
-            //! Sign In Button
-            CustomButton(
-              isLoading: _isLoading,
-              isDisabled: _isDisabled,
-              text: 'log in'.toUpperCase(),
-              onPress: () => _loginUser(context),
-            ),
-            const Spacer(flex: 2),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

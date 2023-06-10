@@ -1,38 +1,42 @@
 import 'dart:io';
-import '../../../../core/config/themes/theme.dart';
+import '../Button/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import '../Button/custom_button.dart';
+import '../../../../core/config/themes/theme.dart';
+import '../../../../core/utils/constants/constants.dart';
+import '../../../../core/utils/constants/app_strings.dart';
 
-showAlertDialog(BuildContext context, String text) {
+showAlertDialog({
+  required context,
+  required String titleTxt,
+  required String contentTxt,
+}) {
   final title = Center(
     child: Text(
-      'alert',
+      titleTxt,
       style: cupertinoTextStyle(
         context: context,
         fontWeight: FontWeight.w600,
+        color: Theme.of(context).primaryColor,
       ),
     ),
   );
-  final content = Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Text(
-      text,
-      textAlign: TextAlign.center,
-      style: cupertinoTextStyle(
-        fontSize: 14,
-        context: context,
-        fontWeight: FontWeight.w600,
-      ),
-    ),
-  );
-  final button = Text(
-    'cancel',
+  final content = Text(
+    contentTxt,
+    textAlign: TextAlign.start,
     style: cupertinoTextStyle(
       fontSize: 14,
       context: context,
       fontWeight: FontWeight.w600,
-      color: Theme.of(context).colorScheme.error,
+    ),
+  );
+  final button = Text(
+    AppStrings.done,
+    style: cupertinoTextStyle(
+      fontSize: 14,
+      context: context,
+      fontWeight: FontWeight.w600,
+      color: Theme.of(context).primaryColor,
     ),
   );
   return Platform.isIOS
@@ -44,7 +48,7 @@ showAlertDialog(BuildContext context, String text) {
             insetAnimationDuration: const Duration(seconds: 2),
             actions: [
               CustomButton(
-                text: 'cancel',
+                text: AppStrings.done,
                 onPress: () => Navigator.pop(context),
               ),
             ],
@@ -55,8 +59,9 @@ showAlertDialog(BuildContext context, String text) {
           builder: (context) => AlertDialog(
             title: title,
             content: content,
+            actionsPadding: defaultPadding,
+            contentPadding: EdgeInsetsDirectional.fromSTEB(15, 20, 15, 0),
             actionsAlignment: MainAxisAlignment.start,
-            contentPadding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 5.0),
             actions: [
               TextButton(
                 child: button,

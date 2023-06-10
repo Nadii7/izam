@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import '../Dialogs/loading_widget.dart';
 import '../../../../core/config/themes/theme.dart';
 import '../../../../core/utils/constants/constants.dart';
-import '../Dialogs/loading_widget.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
   final Color color, textColor;
@@ -31,8 +30,8 @@ class CustomButton extends StatelessWidget {
       color: color,
       disabledColor: color.withOpacity(0.5),
       onPressed: isDisabled ? null : onPress,
-      borderRadius: BorderRadius.circular(radius.w),
-      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 10.w),
+      borderRadius: BorderRadius.circular(radius),
+      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
       child: isLoading
           ? const LoadingWidget()
           : Text(

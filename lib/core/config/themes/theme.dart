@@ -103,35 +103,35 @@ InputDecoration textFieldDecoration() {
     filled: true,
     isDense: true,
     counterText: '',
-    fillColor: secondaryBackground,
-    contentPadding: EdgeInsets.symmetric(vertical: 7.h, horizontal: 10.w),
+    fillColor: primaryBackground,
+    contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
     enabledBorder: OutlineInputBorder(
       borderSide: const BorderSide(
         width: 2.0,
-        color: secondaryBackground,
+        color: primaryBackground,
       ),
-      borderRadius: BorderRadius.circular(12.0),
+      borderRadius: BorderRadius.circular(5.0),
     ),
     focusedBorder: OutlineInputBorder(
       borderSide: const BorderSide(
         color: primary,
         width: 2.0,
       ),
-      borderRadius: BorderRadius.circular(12.0),
+      borderRadius: BorderRadius.circular(5.0),
     ),
     errorBorder: OutlineInputBorder(
       borderSide: const BorderSide(
         color: alternate,
         width: 2.0,
       ),
-      borderRadius: BorderRadius.circular(12.0),
+      borderRadius: BorderRadius.circular(5.0),
     ),
     focusedErrorBorder: OutlineInputBorder(
       borderSide: const BorderSide(
         color: alternate,
         width: 2.0,
       ),
-      borderRadius: BorderRadius.circular(12.0),
+      borderRadius: BorderRadius.circular(5.0),
     ),
   );
 }
@@ -140,11 +140,11 @@ BoxDecoration cardDecoration() {
   return BoxDecoration(
     shape: BoxShape.rectangle,
     color: secondaryBackground,
-    borderRadius: BorderRadius.circular(12.h),
+    borderRadius: BorderRadius.circular(20.h),
     border: Border.all(color: primaryBackground),
     boxShadow: const [
       BoxShadow(
-        blurRadius: 5.0,
+        blurRadius: 15.0,
         color: Color(0x3416202A),
         offset: Offset(0.0, 2.0),
       )

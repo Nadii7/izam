@@ -1,3 +1,5 @@
+import 'package:izam/core/utils/constants/app_strings.dart';
+
 import 'core/config/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -30,12 +32,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      minTextAdapt: true,
       designSize: const Size(375, 812),
       builder: (context, child) {
         return MaterialApp(
-          title: 'Izam',
           routes: routes,
           initialRoute: '/',
+          title: AppStrings.appName,
           theme: defaultThemeData(context),
           debugShowCheckedModeBanner: false,
         );

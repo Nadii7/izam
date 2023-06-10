@@ -1,3 +1,4 @@
+import 'package:izam/core/utils/constants/app_strings.dart';
 import 'package:provider/provider.dart';
 import '../widgets/Dialogs/custom_dialog.dart';
 import '../../domain/usecase/user_usecase.dart';
@@ -12,8 +13,10 @@ Future<void> resetPassword({
 
   if (result.success) {
     showAlertDialog(
-      context,
-      'successful! Your Password has been changed. New password: ${result.user!.password}',
+      context: context,
+      titleTxt: AppStrings.done,
+      contentTxt:
+          'successful! Your Password has been changed. New password: ${result.user!.password}',
     );
   } else {
     showCustomSnack(

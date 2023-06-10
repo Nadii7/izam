@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:izam/core/utils/constants/app_strings.dart';
 import '../../../../core/config/themes/theme.dart';
 import '../../../../core/utils/constants/constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,7 +33,7 @@ class _CustomPasswordInputFieldState extends State<CustomPasswordInputField> {
       strutStyle: const StrutStyle(forceStrutHeight: true),
       onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
       decoration: textFieldDecoration().copyWith(
-        labelText: 'Password',
+        labelText: AppStrings.password,
         suffixIcon: InkWell(
           focusNode: FocusNode(skipTraversal: true),
           onTap: () => setState(() => _isHidden = !_isHidden),

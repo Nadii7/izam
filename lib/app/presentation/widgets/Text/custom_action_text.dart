@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../core/config/themes/theme.dart';
 import '../../../../core/utils/constants/constants.dart';
 
