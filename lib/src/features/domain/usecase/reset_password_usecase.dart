@@ -1,4 +1,4 @@
-import 'login_usecase.dart';
+import '../entity/login_result.dart';
 import '../repository/user_repository.dart';
 
 class ResetPasswordUseCase {

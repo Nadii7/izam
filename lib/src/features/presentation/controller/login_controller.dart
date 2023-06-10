@@ -10,19 +10,16 @@ Future<void> tryLogin({
 }) async {
   final auth = Provider.of<LoginUseCase>(context, listen: false);
   final result = await auth.login(email, password);
-
-  if (result.success) {
-    showAlertDialog(
-      context: context,
-      titleTxt: AppStrings.loginSuccess,
-      contentTxt:
-          ' Email: ${result.user!.email}\n Password: ${result.user!.password}\n Login Count: ${result.user!.loginCount} times.',
-    );
-  } else {
-    showAlertDialog(
-      context: context,
-      titleTxt: AppStrings.loginFails,
-      contentTxt: 'Invalid password try again with different password.',
-    );
-  }
+  result.success
+      ? showAlertDialog(
+          context: context,
+          titleTxt: AppStrings.loginSuccess,
+          contentTxt:
+              ' Email: ${result.user!.email}\n Password: ${result.user!.password}\n Login Count: ${result.user!.loginCount} times.',
+        )
+      : showAlertDialog(
+          context: context,
+          titleTxt: AppStrings.loginFails,
+          contentTxt: 'Invalid password try again with different password.',
+        );
 }

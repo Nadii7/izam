@@ -1,4 +1,4 @@
-import '../entity/user.dart';
+import '../entity/login_result.dart';
 import '../repository/user_repository.dart';
 
 class LoginUseCase {
@@ -16,25 +16,4 @@ class LoginUseCase {
       return LoginResult.failure();
     }
   }
-
-  Future<LoginResult> resetPassword(String email) async {
-    try {
-      final user = await userRepository.resetPassword(email);
-      return LoginResult.success(user!);
-    } catch (e) {
-      return LoginResult.failure();
-    }
-  }
-}
-
-class LoginResult {
-  final bool success;
-  final User? user;
-
-  LoginResult({required this.success, required this.user});
-
-  factory LoginResult.success(User user) =>
-      LoginResult(success: true, user: user);
-
-  factory LoginResult.failure() => LoginResult(success: false, user: null);
 }

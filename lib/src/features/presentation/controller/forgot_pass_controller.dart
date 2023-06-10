@@ -10,18 +10,15 @@ Future<void> resetPassword({
 }) async {
   final user = Provider.of<ResetPasswordUseCase>(context, listen: false);
   final result = await user.resetPassword(email);
-
-  if (result.success) {
-    showAlertDialog(
-      context: context,
-      titleTxt: AppStrings.done,
-      contentTxt:
-          'successful! Your Password has been changed. New password: ${result.user!.password}',
-    );
-  } else {
-    showCustomSnack(
-      context,
-      'No user exists with the provided email try login.',
-    );
-  }
+  result.success
+      ? showAlertDialog(
+          context: context,
+          titleTxt: AppStrings.done,
+          contentTxt:
+              'successful! Your Password has been changed. New password: ${result.user!.password}',
+        )
+      : showCustomSnack(
+          context,
+          'No user exists with the provided email try login.',
+        );
 }
