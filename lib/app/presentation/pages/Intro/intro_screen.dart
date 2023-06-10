@@ -11,7 +11,6 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
-  
   startTime() async {
     return Timer(
       const Duration(seconds: 2),
