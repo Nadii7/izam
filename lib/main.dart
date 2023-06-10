@@ -1,18 +1,18 @@
-import 'package:izam/core/utils/constants/app_strings.dart';
+import 'package:izam/src/core/utils/constants/app_strings.dart';
 
-import 'core/config/themes/theme.dart';
+import 'src/core/config/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'core/config/routes/routes.dart';
+import 'src/core/config/routes/routes.dart';
 import 'package:provider/provider.dart';
-import 'app/data/database/init_database.dart';
-import 'app/domain/usecase/user_usecase.dart';
-import 'app/data/repository/user_repository_impl.dart';
+import 'src/feature/data/database/app_database.dart';
+import 'src/feature/domain/usecase/user_usecase.dart';
+import 'src/feature/data/repository/user_repository_impl.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final database = await initDatabase();
+  final database = await AppDataBase().initDatabase();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
     MultiProvider(

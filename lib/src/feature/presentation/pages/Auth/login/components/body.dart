@@ -1,8 +1,8 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:izam/core/config/themes/theme.dart';
 import '../../../../controller/login_controller.dart';
 import '../../../../Widgets/Button/custom_button.dart';
+import '../../../../../../core/config/themes/theme.dart';
 import '../../../../Widgets/Text/custom_mail_field.dart';
 import '../../../../Widgets/Text/custom_action_text.dart';
 import '../../../../Widgets/Text/custom_password_field.dart';
@@ -78,10 +78,7 @@ class _BodyState extends State<Body> {
               width: 375,
               height: 365,
               decoration: cardDecoration(),
-              padding: EdgeInsets.symmetric(
-                vertical: 30,
-                horizontal: 20,
-              ),
+              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.max,

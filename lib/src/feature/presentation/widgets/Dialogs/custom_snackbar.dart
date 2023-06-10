@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:izam/core/config/themes/theme.dart';
+import '../../../../core/config/themes/theme.dart';
 import '../../../../core/utils/constants/constants.dart';
 
 showCustomSnack(BuildContext context, String text) {

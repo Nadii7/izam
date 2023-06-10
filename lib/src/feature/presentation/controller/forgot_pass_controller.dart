@@ -1,8 +1,8 @@
-import 'package:izam/core/utils/constants/app_strings.dart';
 import 'package:provider/provider.dart';
 import '../widgets/Dialogs/custom_dialog.dart';
 import '../../domain/usecase/user_usecase.dart';
 import '../widgets/Dialogs/custom_snackbar.dart';
+import '../../../core/utils/constants/app_strings.dart';
 
 Future<void> resetPassword({
   required context,
