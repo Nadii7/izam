@@ -12,13 +12,18 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final database = await initDatabase();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  MultiProvider(providers: [
-    Provider<LoginUseCase>(
-      create: (_) => LoginUseCase(
-        UserRepositoryImpl(database),
-      ),
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider<LoginUseCase>(
+          create: (_) => LoginUseCase(
+            UserRepositoryImpl(database),
+          ),
+        ),
+      ],
+      child: const MyApp(),
     ),
-  ], child: const MyApp());
+  );
 }
 
 class MyApp extends StatelessWidget {

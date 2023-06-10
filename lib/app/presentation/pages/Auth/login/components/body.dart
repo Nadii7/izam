@@ -1,6 +1,6 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:izam/app/presentation/controller/login_controller.dart';
+import '../../../../controller/login_controller.dart';
 import '../../../../Widgets/Button/custom_button.dart';
 import '../../../../Widgets/Text/custom_mail_field.dart';
 import '../../../../Widgets/Text/custom_action_text.dart';
