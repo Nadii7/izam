@@ -9,7 +9,7 @@ class UserUseCase {
   Future<LoginResult> login(String email, String password) async {
     try {
       final user = await userRepository.loginUser(email, password);
-      user.loginCount++;
+      user!.loginCount++;
       await userRepository.updateUser(user);
       return LoginResult.success(user);
     } catch (e) {
