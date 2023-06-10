@@ -66,7 +66,7 @@ class _BodyState extends State<Body> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              "oops you forgot your password! don't worry enter your mail and we will generate a new one for you ",
+              "oops you forgot your password! don't worry enter your email and we will generate a new one for you ",
               style: customTextStyle(
                 height: 1.2,
                 fontWeight: FontWeight.w400,

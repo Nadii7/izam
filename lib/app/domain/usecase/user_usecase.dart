@@ -19,7 +19,7 @@ class UserUseCase {
 
   Future<LoginResult> resetPassword(String email) async {
     try {
-      final user = await userRepository.changePasswordByEmail(email);
+      final user = await userRepository.resetPassword(email);
       return LoginResult.success(user!);
     } catch (e) {
       return LoginResult.failure();

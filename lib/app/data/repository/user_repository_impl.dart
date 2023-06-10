@@ -52,7 +52,7 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<User?> changePasswordByEmail(String email) async {
+  Future<User?> resetPassword(String email) async {
     try {
       final result = await _database.query(
         'users',
