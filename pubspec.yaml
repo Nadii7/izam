@@ -32,6 +32,8 @@ dependencies:
   
   # Use to handle screen sizes
   flutter_screenutil: ^5.7.0
+
+  mockito: ^5.4.2
   
 dev_dependencies:
   flutter_test:

@@ -5,7 +5,6 @@ import '../../../../controller/login_controller.dart';
 import '../../../../Widgets/Button/custom_button.dart';
 import '../../../../Widgets/Text/custom_mail_field.dart';
 import '../../../../Widgets/Text/custom_action_text.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Widgets/Text/custom_password_field.dart';
 import '../../../../../../core/utils/constants/constants.dart';
 import '../../../../../../core/utils/constants/app_strings.dart';
@@ -66,10 +65,11 @@ class _BodyState extends State<Body> {
         children: [
           Align(
             alignment: Alignment.topCenter,
-            child: SvgPicture.asset(
-              "assets/images/logo.svg",
-              height: 150.h,
-              fit: BoxFit.fitHeight,
+            child: SizedBox(
+              width: 200,
+              child: SvgPicture.asset(
+                "assets/images/logo.svg",
+              ),
             ),
           ),
           Align(

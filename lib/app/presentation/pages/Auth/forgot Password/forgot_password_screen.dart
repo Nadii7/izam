@@ -1,3 +1,4 @@
+import '../../../../../core/utils/constants/constants.dart';
 import 'components/body.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ class ForgotPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Body(),
+      backgroundColor: secondaryBackground,
       appBar: AppBar(title: Text("Forgot Password")),
     );
   }

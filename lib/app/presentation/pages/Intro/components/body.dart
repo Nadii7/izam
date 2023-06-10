@@ -8,7 +8,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 300,
+        width: 200,
         child: SvgPicture.asset(
           "assets/images/logo.svg",
         ),
