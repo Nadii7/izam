@@ -16,14 +16,7 @@ class UserRepositoryImpl implements UserRepository {
         where: 'email = ?',
         whereArgs: [email, password],
       );
-      if (result.isNotEmpty) {
-        final storedUser = User.fromMap(result.first);
-        if (storedUser.password == password) {
-          return storedUser;
-        } else {
-          return null;
-        }
-      } else {
+      if (result.isEmpty) {
         final id = await _database.rawInsert(
           'INSERT INTO users(email, password, loginCount) VALUES (?, ?, ?)',
           [email, password, 0],
@@ -32,6 +25,9 @@ class UserRepositoryImpl implements UserRepository {
             User(id: id, email: email, loginCount: 0, password: password);
         return newUser.copyWith(id: id);
       }
+      final storedUser = User.fromMap(result.first);
+      if (storedUser.password != password) return null;
+      return storedUser;
     } catch (e) {
       throw UserRepositoryException('Failed to get user: $e');
     }
@@ -59,20 +55,17 @@ class UserRepositoryImpl implements UserRepository {
         where: 'email = ?',
         whereArgs: [email],
       );
-      if (result.isNotEmpty) {
-        final generatedPassword = generatePassword();
-        final updatedUser =
-            User.fromMap(result.first).copyWith(password: generatedPassword);
-        await _database.update(
-          'users',
-          updatedUser.toMap(),
-          where: 'email = ?',
-          whereArgs: [email],
-        );
-        return updatedUser;
-      } else {
-        return null;
-      }
+      if (result.isEmpty) return null;
+      final generatedPassword = generatePassword();
+      final updatedUser =
+          User.fromMap(result.first).copyWith(password: generatedPassword);
+      await _database.update(
+        'users',
+        updatedUser.toMap(),
+        where: 'email = ?',
+        whereArgs: [email],
+      );
+      return updatedUser;
     } catch (e) {
       throw UserRepositoryException('Failed to change password: $e');
     }
