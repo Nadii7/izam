@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'core/config/routes/routes.dart';
 import 'package:provider/provider.dart';
 import 'app/data/database/init_database.dart';
-import 'app/domain/usecase/login_usecase.dart';
+import 'app/domain/usecase/user_usecase.dart';
 import 'app/data/repository/user_repository_impl.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,10 +15,8 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        Provider<LoginUseCase>(
-          create: (_) => LoginUseCase(
-            UserRepositoryImpl(database),
-          ),
+        Provider<UserUseCase>(
+          create: (_) => UserUseCase(UserRepositoryImpl(database)),
         ),
       ],
       child: const MyApp(),

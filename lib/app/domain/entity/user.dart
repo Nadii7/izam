@@ -29,11 +29,11 @@ class User extends Equatable {
     };
   }
 
-  User copyWith({int? id, int? loginCount}) {
+  User copyWith({int? id, String? password, int? loginCount}) {
     return User(
-      id: id ?? this.id,
       email: email,
-      password: password,
+      id: id ?? this.id,
+      password: password ?? this.password,
       loginCount: loginCount ?? this.loginCount,
     );
   }

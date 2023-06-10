@@ -1,10 +1,10 @@
 import '../entity/user.dart';
 import '../repository/user_repository.dart';
 
-class LoginUseCase {
+class UserUseCase {
   final UserRepository userRepository;
 
-  LoginUseCase(this.userRepository);
+  UserUseCase(this.userRepository);
 
   Future<LoginResult> login(String email, String password) async {
     try {
@@ -13,14 +13,18 @@ class LoginUseCase {
       await userRepository.updateUser(user);
       return LoginResult.success(user);
     } catch (e) {
-      return LoginResult.failure(LoginError.unknownError);
+      return LoginResult.failure();
     }
   }
-}
 
-enum LoginError {
-  invalidCredentials,
-  unknownError,
+  Future<LoginResult> resetPassword(String email) async {
+    try {
+      final user = await userRepository.changePasswordByEmail(email);
+      return LoginResult.success(user!);
+    } catch (e) {
+      return LoginResult.failure();
+    }
+  }
 }
 
 class LoginResult {
@@ -32,6 +36,5 @@ class LoginResult {
   factory LoginResult.success(User user) =>
       LoginResult(success: true, user: user);
 
-  factory LoginResult.failure(LoginError error) =>
-      LoginResult(success: false, user: null);
+  factory LoginResult.failure() => LoginResult(success: false, user: null);
 }
