@@ -1,14 +1,14 @@
 import 'package:provider/provider.dart';
 import '../widgets/Dialogs/custom_dialog.dart';
-import '../../domain/usecase/user_usecase.dart';
 import '../widgets/Dialogs/custom_snackbar.dart';
 import '../../../core/utils/constants/app_strings.dart';
+import '../../domain/usecase/reset_password_usecase.dart';
 
 Future<void> resetPassword({
   required context,
   required String email,
 }) async {
-  final user = Provider.of<UserUseCase>(context, listen: false);
+  final user = Provider.of<ResetPasswordUseCase>(context, listen: false);
   final result = await user.resetPassword(email);
 
   if (result.success) {

@@ -1,7 +1,6 @@
 name: izam
 version: 1.0.0+1
 publish_to: 'none' 
-description: A new Flutter project.
 
 environment:
   sdk: '>=3.0.3 <4.0.0'
@@ -14,26 +13,20 @@ dependencies:
   cupertino_icons: ^1.0.5
 
   # Use as default SVG image loader, prefer use SVG as image asset
-  flutter_svg: ^2.0.4
-  
-  # Use as Network Client
-  dio: ^5.0.3
-  
-  # Functional programming thingies
-  dartz: ^0.10.1
+  flutter_svg: ^2.0.6
 
-  # Use for State Management with BLoC pattern
+  # Use for State Management
   provider: ^6.0.5
+  
+  # Use for simplify the process of comparing instances of the same object
   equatable: ^2.0.5
 
-  # Use as sharedPreferences to save local data
+  # Use for saving local data
   sqflite: ^2.2.8+4
   path_provider: ^2.0.1
   
   # Use to handle screen sizes
-  flutter_screenutil: ^5.7.0
-
-  mockito: ^5.4.2
+  flutter_screenutil: ^5.8.4
   
 dev_dependencies:
   flutter_test:

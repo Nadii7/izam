@@ -1,10 +1,10 @@
 import '../entity/user.dart';
 import '../repository/user_repository.dart';
 
-class UserUseCase {
+class LoginUseCase {
   final UserRepository userRepository;
 
-  UserUseCase(this.userRepository);
+  LoginUseCase(this.userRepository);
 
   Future<LoginResult> login(String email, String password) async {
     try {

@@ -1,6 +1,6 @@
 import 'package:provider/provider.dart';
 import '../widgets/Dialogs/custom_dialog.dart';
-import '../../domain/usecase/user_usecase.dart';
+import '../../domain/usecase/login_usecase.dart';
 import '../../../core/utils/constants/app_strings.dart';
 
 Future<void> tryLogin({
@@ -8,7 +8,7 @@ Future<void> tryLogin({
   required String email,
   required String password,
 }) async {
-  final auth = Provider.of<UserUseCase>(context, listen: false);
+  final auth = Provider.of<LoginUseCase>(context, listen: false);
   final result = await auth.login(email, password);
 
   if (result.success) {
