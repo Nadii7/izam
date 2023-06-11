@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../Widgets/Button/custom_button.dart';
-import '../../../../widgets/Text/custom_mail_field.dart';
+import '../../../../widgets/text/custom_mail_field.dart';
 import '../../../../../../core/config/themes/theme.dart';
 import '../../../../controller/forgot_pass_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
