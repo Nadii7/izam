@@ -107,7 +107,9 @@ The presentation layer interact via domain layer, i.e entities and use cases.
 # How to run
 
 `flutter run`
+
 Dart Version : 3:0:3
+
 Flutter Version: 3:10:3 stable
 
 ## How to test
