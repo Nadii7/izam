@@ -26,8 +26,8 @@ class UserRepositoryImpl implements UserRepository {
         return newUser.copyWith(id: id);
       }
       final storedUser = User.fromMap(result.first);
-      if (storedUser.password != password) return null;
-      return storedUser;
+      if (storedUser.password == password) return storedUser;
+      return null;
     } catch (e) {
       throw UserRepositoryException('Failed to get user: $e');
     }

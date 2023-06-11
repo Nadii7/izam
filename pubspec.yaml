@@ -23,8 +23,8 @@ dependencies:
 
   # Use for saving local data
   sqflite: ^2.2.8+4
-  path_provider: ^2.0.1
-  
+  path: ^1.8.3
+    
   # Use to handle screen sizes
   flutter_screenutil: ^5.8.4
   

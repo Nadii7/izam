@@ -12,7 +12,7 @@ class AppDataBase {
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             email TEXT NOT NULL,
             password TEXT NOT NULL,
-            loginCount INTEGER NOT NULL,
+            loginCount INTEGER NOT NULL
           )
         ''');
       },
