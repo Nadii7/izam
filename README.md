@@ -27,80 +27,81 @@ The presentation layer interact via domain layer, i.e entities and use cases.
 # Folder structure
 
 ```
-├── src
-│   ├── core
-│   │   ├── config
-│   │   │   ├── routes
-│   │   │   │   └── routes.dart
-│   │   │   └── themes
-│   │   │       └── theme.dart
-│   │   └── utils
-│   │   │   ├── constants
-│   │   │   │   ├── app_strings.dart
-│   │   │   │   └── constants.dart
-│   │   │   └── extensions
-│   │   │       └── extensions.dart
-│   ├── features
-│   │   ├── data
-│   │   │   ├── database
-│   │   │   │   └── app_database.dart
-│   │   │   │
-│   │   │   └── repositories
-│   │   │       └── user_repository_impl.dart
-│   │   ├── domain
-│   │   │   ├── entity
-│   │   │   │   ├── login_result.dart
-│   │   │   │   │
-│   │   │   │   └── user.dart
-│   │   │   ├── repository
-│   │   │   │   └── user_repository.dart.dart
-│   │   │   └── usecases
-│   │   │       ├── login_usecase.dart
-│   │   │       └── reset_usecase.dart
-│   │   └── presentation
-│   │       ├── controller
-│   │       │   ├── forgot_pass_controller.dart
-│   │       │   └── login.dart
-│   │       ├── pages
-│   │       │   ├── auth
-│   │       │   │   ├── forgot password.dart
-│   │       │   │   │   ├── components.dart
-│   │       │   │   │   │   └── body.dart
-│   │       │   │   │   └── intro_screen.dart
-│   │       │   │   └── login.dart
-│   │       │   │       ├── components.dart
-│   │       │   │       │   └── body.dart
-│   │       │   │       └── login_screen.dart
-│   │       │   └── intro
-│   │       │       ├── components.dart
-│   │       │       │   └── body.dart
-│   │       │       └── intro_screen.dart
-│   │       └── widgets
-│   │           ├── button
-│   │           │   └── custom_button.dart
-│   │           ├── dialogs
-│   │           │   ├── custom_dialog.dart
-│   │           │   ├── custom_snackbar.dart
-│   │           │   └── loading_widget.dart
-│   │           └── text
-│   │               ├── custom_action_text.dart
-│   │               ├── custom_mail_field.dart
-│   │               └── custom_password_field.dart
-│   └── main.dart
-├── pubspec.lock
-├── pubspec.yaml
-└── test
-    └── data
-        │   ├── database
-        │   │   └── database_test.dart
-        │   │
-        │   └── repositories
-        │       └── user_repo_test.dart
-        └── domain
-            └── entity
-                ├── login_result_test.dart
-                │
-                └── user_model_test.dart
+├── lib
+│   ├── src
+│   │   ├── core
+│   │   │   ├── config
+│   │   │   │   ├── routes
+│   │   │   │   │   └── routes.dart
+│   │   │   │   └── themes
+│   │   │   │       └── theme.dart
+│   │   │   └── utils
+│   │   │   │   ├── constants
+│   │   │   │   │   ├── app_strings.dart
+│   │   │   │   │   └── constants.dart
+│   │   │   │   └── extensions
+│   │   │   │       └── extensions.dart
+│   │   ├── features
+│   │   │   ├── data
+│   │   │   │   ├── database
+│   │   │   │   │   └── app_database.dart
+│   │   │   │   │   │
+│   │   │   │   └── repositories
+│   │   │   │       └── user_repository_impl.dart
+│   │   │   ├── domain
+│   │   │   │   ├── entity
+│   │   │   │   │   ├── login_result.dart
+│   │   │   │   │   │
+│   │   │   │   │   └── user.dart
+│   │   │   │   ├── repository
+│   │   │   │   │   └── user_repository.dart.dart
+│   │   │   │   └── usecases
+│   │   │   │       ├── login_usecase.dart
+│   │   │   │       └── reset_usecase.dart
+│   │   │   └── presentation
+│   │   │       ├── controller
+│   │   │       │   ├── forgot_pass_controller.dart
+│   │   │       │   └── login.dart
+│   │   │       ├── pages
+│   │   │       │   ├── auth
+│   │   │       │   │   ├── forgot password.dart
+│   │   │       │   │   │   ├── components.dart
+│   │   │       │   │   │   │   └── body.dart
+│   │   │       │   │   │   └── intro_screen.dart
+│   │   │       │   │   └── login.dart
+│   │   │       │   │       ├── components.dart
+│   │   │       │   │       │   └── body.dart
+│   │   │       │   │       └── login_screen.dart
+│   │   │       │   └── intro
+│   │   │       │       ├── components.dart
+│   │   │       │       │   └── body.dart
+│   │   │       │       └── intro_screen.dart
+│   │   │       └── widgets
+│   │   │           ├── button
+│   │   │           │   └── custom_button.dart
+│   │   │           ├── dialogs
+│   │   │           │   ├── custom_dialog.dart
+│   │   │           │   ├── custom_snackbar.dart
+│   │   │           │   └── loading_widget.dart
+│   │   │           └── text
+│   │   │               ├── custom_action_text.dart
+│   │   │               ├── custom_mail_field.dart
+│   │   │               └── custom_password_field.dart
+│   │   └── main.dart
+│   ├── pubspec.lock
+│   ├── pubspec.yaml
+│   └── test
+        └── data
+            │   ├── database
+            │   │   └── database_test.dart
+            │   │
+            │   └── repositories
+            │       └── user_repo_test.dart
+            └── domain
+                └── entity
+                    ├── login_result_test.dart
+                    │
+                    └── user_model_test.dart
 
 ```
 
