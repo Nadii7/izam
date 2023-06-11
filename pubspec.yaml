@@ -22,11 +22,14 @@ dependencies:
   equatable: ^2.0.5
 
   # Use for saving local data
-  sqflite: ^2.2.8+4
   path: ^1.8.3
+  sqflite: ^2.2.8+4
+  sqflite_common_ffi: ^2.2.5
     
   # Use to handle screen sizes
   flutter_screenutil: ^5.8.4
+
+  mockito: ^5.4.2
   
 dev_dependencies:
   flutter_test:

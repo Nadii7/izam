@@ -14,7 +14,7 @@ class UserRepositoryImpl implements UserRepository {
       final result = await _database.query(
         'users',
         where: 'email = ?',
-        whereArgs: [email, password],
+        whereArgs: [email],
       );
       if (result.isEmpty) {
         final id = await _database.rawInsert(
