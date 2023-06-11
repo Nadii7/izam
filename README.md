@@ -1,8 +1,10 @@
-Izam app with clean code architecture
-
 ## About Izam App
 
 Izam app is a simple app that allow user to login with valid email and password and store them in a local database also can reset app by entering his mail in forgot password screen and the generates a new valid password to enable it to login again.
+
+## About App Architecture
+
+Izam app is written with clean code architecture
 
 In clean code architecture, there are three main layers
 
