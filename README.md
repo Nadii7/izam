@@ -1,6 +1,6 @@
 ## About Izam App
 
-Izam app is a simple app that allow user to login with valid email and password and store them in a local database also can reset app by entering his mail in forgot password screen and the generates a new valid password to enable it to login again.
+Izam app is a simple app that allow user to login with valid email and password and store them in a local database also user can reset his account password by entering account email in forgot password screen and let the app generate a new valid password to be able to login again with new password.
 
 ## About App Architecture
 
