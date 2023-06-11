@@ -9,8 +9,8 @@ In clean code architecture, there are three main layers
 - core
 
 ##### 6. More insight of layers
-![image](https://miro.medium.com/max/772/0*sfCDEb571WD-7EfP.jpg)
 
+![image](https://miro.medium.com/max/772/0*sfCDEb571WD-7EfP.jpg)
 
 ## Domain
 
