@@ -2,11 +2,10 @@ Izam app with clean code architecture
 
 In clean code architecture, there are three main layers
 
+- core
 - Data
 - Domain
 - Presentation
-  along with
-- core
 
 ##### More insight of layers
 
