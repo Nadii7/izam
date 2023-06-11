@@ -89,17 +89,17 @@ The presentation layer interact via domain layer, i.e entities and use cases.
 │   ├── pubspec.lock
 │   ├── pubspec.yaml
 │   └── test
-        └── data
-            │   ├── database
-            │   │   └── database_test.dart
-            │   │
-            │   └── repositories
-            │       └── user_repo_test.dart
-            └── domain
-                └── entity
-                    ├── login_result_test.dart
-                    │
-                    └── user_model_test.dart
+│       └── data
+│           │   ├── database
+│           │   │   └── database_test.dart
+│           │   │
+│           │   └── repositories
+│           │       └── user_repo_test.dart
+│           └── domain
+│               └── entity
+│                   ├── login_result_test.dart
+│                   │
+│                   └── user_model_test.dart
 
 ```
 
