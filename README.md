@@ -8,6 +8,10 @@ In clean code architecture, there are three main layers
   along with
 - core
 
+##### 6. More insight of layers
+![image](https://miro.medium.com/max/772/0*sfCDEb571WD-7EfP.jpg)
+
+
 ## Domain
 
 This is innermost layer and will contain the core business logic i.e. usecases and business object also called as entities, the usecase depends on the contract of repository
